@@ -99,7 +99,6 @@ if (isset($_POST['create_stock'])) {
                                     <div class="row">
                                         <div class="col-md-12 text-center">
                                             <button type="submit" name="create_stock" class="btn btn-primary mt-3">Create Stock Investment</button>
-
                                         </div>
                                     </div>
                                 </form>
@@ -111,3 +110,7 @@ if (isset($_POST['create_stock'])) {
         </div>
     </div>
 </div>
+
+<?php
+require_once ("./layout/footer.php");
+?>

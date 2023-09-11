@@ -11,9 +11,9 @@ function support_plugin(){
 
 function dbConnect(){
     $servername = "localhost";
-    $username = "multistream6_crestlinemb";//DATABASE USERNAME
+    $username = "fortageunion";//DATABASE USERNAME
     $password = "+C@ppy126";//DATABASE PASSWORD
-    $database = "multistream6_crestlinemb";//DATABASE NAME
+    $database = "crestlinemb";//DATABASE NAME
     $dns = "mysql:host=$servername;dbname=$database";
 
     try {
