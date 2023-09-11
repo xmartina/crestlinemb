@@ -12,12 +12,14 @@ if (isset($_POST['create_stock'])) {
     $stock_interest = $_POST['stock_interest'];
     $stock_duration = $_POST['stock_duration'];
     $stock_status = $_POST['stock_status'];
+    $stock_id = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 8);
 
 // SQL query to insert data into the database
     if(true) {
-        $create_stock = "INSERT INTO stock_investment (stock_title, stock_amount, stock_interest, stock_duration, stock_status) VALUES (:stock_title, :stock_amount, :stock_interest, :stock_duration, :stock_status)";
+        $create_stock = "INSERT INTO stock_investment (stock_id, stock_title, stock_amount, stock_interest, stock_duration, stock_status) VALUES (:stock_id, :stock_title, :stock_amount, :stock_interest, :stock_duration, :stock_status)";
         $stock_db = $conn->prepare($create_stock);
         $stock_db->execute([
+            'stock_id' => $stock_id,
             'stock_title' => $stock_title,
             'stock_amount' => $stock_amount,
             'stock_interest' => $stock_interest,
@@ -27,6 +29,7 @@ if (isset($_POST['create_stock'])) {
 
         if(true){
             toast_alert('success','Stock Plan Added Successfully','Approved');
+
         }else{
             toast_alert('error','Sorry something went wrong');
         }
