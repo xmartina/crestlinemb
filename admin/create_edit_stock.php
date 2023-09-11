@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<h2>Insert Stock Information</h2>
+<h2 class="mt-5 pt-5">Insert Stock Information</h2>
 <form method="POST">
     <label for="stock_title">Stock Title:</label>
     <input type="text" name="stock_title" required><br><br>
@@ -52,6 +52,6 @@ if (isset($_POST['submit'])) {
         <option value="Inactive">Inactive</option>
     </select><br><br>
 
-    <input type="submit" name="submit" value="Insert">
+    <input type="submit" name="create_stock" value="create_stock">
 </form>
 
