@@ -15,7 +15,6 @@ if (isset($_POST['create_stock'])) {
     $stock_id =  str_pad(rand(0, 9999999), 10, '0', STR_PAD_LEFT);
 
 // SQL query to insert data into the database
-    if(true) {
         $create_stock = "INSERT INTO stock_investment (stock_id, stock_title, stock_amount, stock_interest, stock_duration, stock_status) VALUES (:stock_id, :stock_title, :stock_amount, :stock_interest, :stock_duration, :stock_status)";
         $stock_db = $conn->prepare($create_stock);
         $stock_db->execute([
@@ -33,9 +32,6 @@ if (isset($_POST['create_stock'])) {
         }else{
             toast_alert('error','Sorry something went wrong');
         }
-    }else{
-        toast_alert('error','Sorry something went wrong');
-    }
 
 }
 ?>
