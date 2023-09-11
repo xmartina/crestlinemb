@@ -3,6 +3,19 @@ require_once ("./layout/header.php");
 ?>
 
 <?php
+// Establish a database connection (replace with your database credentials)
+$servername = "localhost";
+$username = "multistream6_crestlinemb";
+$password = "+C@ppy126";
+$dbname = "multistream6_crestlinemb";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 if (isset($_POST['submit'])) {
     $stock_title = $_POST['stock_title'];
     $stock_amount = $_POST['stock_amount'];
@@ -14,22 +27,14 @@ if (isset($_POST['submit'])) {
     $sql = "INSERT INTO stock_investment (stock_title, stock_amount, stock_interest, stock_duration, stock_status)
             VALUES ('$stock_title', '$stock_amount', '$stock_interest', '$stock_duration', '$stock_status')";
 
-    if(true){
-        toast_alert('success','Plan added successfully','Approved');
-
-
-
-    }else{
-        toast_alert('error','Sorry something went wrong');
-
-
+    if ($conn->query($sql) === TRUE) {
+        echo "Stock information inserted successfully.";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
-    header('Location:'.$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']);
-    die;
-
-
 }
+
+$conn->close();
 ?>
 
 <h2 class="mt-5 pt-5">Insert Stock Information</h2>
