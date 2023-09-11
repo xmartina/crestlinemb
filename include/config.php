@@ -1,7 +1,7 @@
 <?php
 
-define("WEB_TITLE","South Monument Bank"); // Change Bank Name
-define("WEB_URL","http://dashboard.crestlinemb.com"); // Change No "/" Ending splash
+define("WEB_TITLE","Crestline Monument Bank"); // Change Bank Name
+define("WEB_URL","https://dashboard.crestlinemb.com"); // Change No "/" Ending splash
 define("WEB_EMAIL","contact@crestlinemb.com"); // Change Your Website Email
 
 $web_url = WEB_URL;
