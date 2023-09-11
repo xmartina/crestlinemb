@@ -38,13 +38,13 @@ if (isset($_POST['submit'])) {
     <input type="text" name="stock_title" required><br><br>
 
     <label for="stock_amount">Stock Amount:</label>
-    <input type="text" name="stock_amount" required><br><br>
+    <input type="number" name="stock_amount" required><br><br>
 
     <label for="stock_interest">Stock Interest:</label>
-    <input type="text" name="stock_interest" required><br><br>
+    <input type="number" name="stock_interest" required>%<br><br>
 
     <label for="stock_duration">Stock Duration:</label>
-    <input type="text" name="stock_duration" required><br><br>
+    <input type="number" name="stock_duration" required><br><br>
 
     <label for="stock_status">Stock Status:</label>
     <select name="stock_status" required>
@@ -52,6 +52,6 @@ if (isset($_POST['submit'])) {
         <option value="Inactive">Inactive</option>
     </select><br><br>
 
-    <input type="submit" name="create_stock" value="create_stock">
+    <input type="submit" name="create_stock" value="Submit">
 </form>
 
