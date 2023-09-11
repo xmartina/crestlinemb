@@ -4,19 +4,9 @@ require_once ("./layout/header.php");
 
 <?php
 // Establish a database connection (replace with your database credentials)
-$servername = "localhost";
-$username = "multistream6_crestlinemb";
-$password = "+C@ppy126";
-$dbname = "multistream6_crestlinemb";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-if (isset($_POST['submit'])) {
+if (isset($_POST['create_stock'])) {
     $stock_title = $_POST['stock_title'];
     $stock_amount = $_POST['stock_amount'];
     $stock_interest = $_POST['stock_interest'];
@@ -24,39 +14,97 @@ if (isset($_POST['submit'])) {
     $stock_status = $_POST['stock_status'];
 
 // SQL query to insert data into the database
-    $sql = "INSERT INTO stock_investment (stock_title, stock_amount, stock_interest, stock_duration, stock_status)
-            VALUES ('$stock_title', '$stock_amount', '$stock_interest', '$stock_duration', '$stock_status')";
+    if(true) {
+        $create_stock = "INSERT INTO stock_investment (stock_title, stock_amount, stock_interest, stock_duration, stock_status) VALUES (:stock_title, :stock_amount, :stock_interest, :stock_duration, :stock_status)";
+        $stock_db = $conn->prepare($create_stock);
+        $stock_db->execute([
+            'stock_title' => $stock_title,
+            'stock_amount' => $stock_amount,
+            'stock_interest' => $stock_interest,
+            'stock_duration' => $stock_duration,
+            'stock_status' => $stock_status
+        ]);
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Stock information inserted successfully.";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        if(true){
+            toast_alert('success','Stock Plan Added Successfully','Approved');
+        }else{
+            toast_alert('error','Sorry something went wrong');
+        }
+    }else{
+        toast_alert('error','Sorry something went wrong');
     }
-}
 
-$conn->close();
+}
 ?>
 
-<h2 class="mt-5 pt-5">Insert Stock Information</h2>
-<form method="POST">
-    <label for="stock_title">Stock Title:</label>
-    <input type="text" name="stock_title" required><br><br>
+<div id="content" class="main-content">
+    <div class="layout-px-spacing">
+        <div class="row layout-top-spacing">
+            <div id="basic" class="col-lg-12 layout-spacing">
+                <div class="statbox widget box box-shadow">
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                <h4>Insert Stock Information</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-content widget-content-area">
+                        <div class="row">
+                            <div class="col-lg-10 col-12 mx-auto">
+                                <form method="post">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-4">
+                                                <label for="">Stock Title:</label>
+                                                <input type="text"  name="stock_title" class="form-control" id="" placeholder="Stock Title:" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-4">
+                                                <label for="">Stock Amount:</label>
+                                                <input type="number"  name="stock_amount" class="form-control" id="" placeholder="Stock Amount:" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-4">
+                                                <label for="">Stock Interest:</label>
+                                                <input type="number"  name="stock_interest" class="form-control" id="" placeholder="Stock Interest:" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-4">
+                                                <label for="">Stock Duration:</label>
+                                                <input type="number"  name="stock_duration" class="form-control" id="" placeholder="Stock Duration:" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-4">
+                                                <label for="">Stock Status:</label>
+                                                <select name="acct_currency" id="" class="form-control basic" required>
+                                                    <option selected="selected">Select</option>
+                                                    <option value="1">Active</option>
+                                                    <option value="2">Inactive</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <button type="submit" name="create_stock" class="btn btn-primary mt-3">Create Stock Investment</button>
 
-    <label for="stock_amount">Stock Amount:</label>
-    <input type="number" name="stock_amount" required><br><br>
-
-    <label for="stock_interest">Stock Interest:</label>
-    <input type="number" name="stock_interest" required>%<br><br>
-
-    <label for="stock_duration">Stock Duration:</label>
-    <input type="number" name="stock_duration" required><br><br>
-
-    <label for="stock_status">Stock Status:</label>
-    <select name="stock_status" required>
-        <option value="Active">Active</option>
-        <option value="Inactive">Inactive</option>
-    </select><br><br>
-
-    <input type="submit" name="create_stock" value="Submit">
-</form>
-
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
