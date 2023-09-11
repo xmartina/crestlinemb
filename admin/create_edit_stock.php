@@ -12,7 +12,7 @@ if (isset($_POST['create_stock'])) {
     $stock_interest = $_POST['stock_interest'];
     $stock_duration = $_POST['stock_duration'];
     $stock_status = $_POST['stock_status'];
-    $stock_id = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 8);
+    $stock_id =  str_pad(rand(0, 9999999), 10, '0', STR_PAD_LEFT);
 
 // SQL query to insert data into the database
     if(true) {
