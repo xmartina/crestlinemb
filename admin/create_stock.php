@@ -29,7 +29,7 @@ if (isset($_POST['create_stock'])) {
     }
     if (true) {
         $delay = 5;
-        $redirectURL = "dashboard.php";
+        $redirectURL = "list_stock.php";
         toast_alert('success', 'Stock Plan Added Successfully', 'Approved');
         header("refresh:$delay;url=$redirectURL");
 

@@ -17,14 +17,14 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         <h5 class=""><?= $row['stock_title'] ?></h5>
                         <div class="row">
                             <div class="col-md-11 mx-auto">
-                                <div class="py-1"><span class="font-weight-bold text-black">Plan Price: </span> <span
+                                <div class="py-1"><span class="font-weight-bold text-black mr-2">Plan Price: </span> <span
                                         class="text-muted"><?= $row['stock_amount'] ?> USD</span></div>
-                                <div class="py-1"><span class="font-weight-bold text-black">Plan Interest: </span> <span
+                                <div class="py-1"><span class="font-weight-bold text-black mr-2">Plan Interest: </span> <span
                                         class="text-muted"><?= $row['stock_interest'] ?> %</span></div>
-                                <div class="py-1"><span class="font-weight-bold text-black">Plan Duration: </span> <span
+                                <div class="py-1"><span class="font-weight-bold text-black mr-2">Plan Duration: </span> <span
                                         class="text-muted"><?= $row['stock_duration'] ?> Days</span></div>
                                 <div class="py-1"><span
-                                        class="font-weight-bold text-black">Plan Status: </span> <?php if ($row['stock_status'] == 1) { ?>
+                                        class="font-weight-bold text-black mr-2">Plan Status: </span> <?php if ($row['stock_status'] == 1) { ?>
                                         <span
                                             class="text-muted">Active</span><?php } elseif ($row['stock_status'] == 2) { ?>
                                         <span
