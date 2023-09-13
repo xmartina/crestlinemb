@@ -583,8 +583,6 @@ if ($row['acct_currency'] === 'USD') {
                         </a>
                     </li>
 
-
-
                     <li class="menu">
                         <a href="#starkit" data-toggle="collapse" aria-expanded="" class="dropdown-toggle">
                             <div class="">
@@ -624,7 +622,38 @@ if ($row['acct_currency'] === 'USD') {
                         </ul>
                     </li>
 
-
+<!--                    Stock List -->
+                    <li class="menu">
+                        <a href="#stock_investment" data-toggle="collapse" aria-expanded="" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-pie-chart">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                                </svg>
+                                <span>Stock Investment</span>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-chevron-right">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </div>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="stock_investment" data-parent="#accordionExample">
+                            <li>
+                                <a href="./list_stock.php"> Stock Plans </a>
+                            </li>
+                            <li>
+                                <a href="./my_stock_plans.php"> My Plans </a>
+                            </li>
+                            <li>
+                                <a href="./stock_transactions.php"> Stock Transaction </a>
+                            </li>
+                        </ul>
+                    </li>
 
                      <li class="menu <?php active('withdrawal.php');?>">
                         <a href="./withdrawal.php" aria-expanded="false" class="dropdown-toggle">
