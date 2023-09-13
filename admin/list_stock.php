@@ -13,7 +13,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <div class="layout-px-spacing">
             <div class="row layout-top-spacing">
                 <div class="col-xl-4 col-lg-4 col-md-6 offset-md-3  layout-spacing">
-                    <div class="info plan-box bg-white shadow-sm rounded p-2">
+                    <div class="plan-box bg-white shadow-sm rounded p-2">
                         <h5 class=""><?= $row['stock_title'] ?></h5>
                         <div class="row">
                             <div class="col-md-11 mx-auto">
