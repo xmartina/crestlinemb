@@ -15,7 +15,7 @@ $sn = 1;
                     ?>
                     <div class="col-xl-4 col-lg-4 col-md-6 layout-spacing">
                         <div class="plan-box p-4 bg-white shadow-sm rounded p-2">
-                            <h5 class="my-3"><?= $row['stock_title'] ?></h5>
+                            <h5 class="my-3 text-capitalize"><?= $row['stock_title'] ?></h5>
                             <div class="row">
                                 <div class="col-md-11 mx-auto">
                                     <div class="py-1"><span class="font-weight-bold text-black mr-2">Plan Price: </span>
