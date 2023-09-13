@@ -1,15 +1,3 @@
-<?php
-include_once("./layout/header.php");
-//require_once("./include/adminloginFunction.php");
-//include_once("../include/config.php");
-
-$id = $_GET['id'];
-$sql = "SELECT * FROM stock_investment WHERE id =:id";
-$data = $conn->prepare($sql);
-$data->execute(['id'=>$id]);
-
-$row = $data->fetch(PDO::FETCH_ASSOC);
-?>
 
 
 <!--  BEGIN CONTENT AREA  -->
