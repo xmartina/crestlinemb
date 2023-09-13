@@ -31,7 +31,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                             class="text-muted">Inactive</span><?php } ?>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group mt-2">
                                     <a href="./edit_stock.php?id=<?php echo $row['stock_id']; ?>">
                                         <button class="btn btn-primary"> Edit Plan</button>
                                     </a>
