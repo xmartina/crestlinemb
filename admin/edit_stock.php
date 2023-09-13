@@ -4,7 +4,7 @@ include_once("./layout/header.php");
 //include_once("../include/config.php");
 
 $id = $_GET['id'];
-$sql = "SELECT * FROM stock_investment WHERE id =:id";
+$sql = "SELECT * FROM stock_investment WHERE id =:stock_id";
 $data = $conn->prepare($sql);
 $data->execute(['id'=>$id]);
 
