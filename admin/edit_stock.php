@@ -157,7 +157,7 @@ if(isset($_POST['delete_stock_plan'])){
                                                 </button>
                                             </div>
                                             <div class="col-md-6 text-center">
-                                                <button type="submit" name="delete_stock_plan" class="btn btn-primary mt-3">
+                                                <button type="submit" name="delete_stock_plan" class="btn btn-primary bg-danger mt-3">
                                                     Delete Stock
                                                 </button>
                                             </div>
