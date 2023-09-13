@@ -17,7 +17,7 @@ if (isset($_POST['modify_stock'])) {
     $stock_duration = $_POST['stock_duration'];
     $stock_status = $_POST['stock_status'];
 
-    $sql = "UPDATE stock_investment SET stock_title=:stock_title, stock_amount=:stock_amount, stock_interest=:stock_interest, stock_duration=:stock_duration, stock_status=:stock_status  WHERE id=:id";
+    $sql = "UPDATE stock_investment SET stock_title=:stock_title, stock_amount=:stock_amount, stock_interest=:stock_interest, stock_duration=:stock_duration, stock_status=:stock_status  WHERE stock_id=:id";
     $stmt = $conn->prepare($sql);
     $stmt->execute([
         'stock_id' => $id,
