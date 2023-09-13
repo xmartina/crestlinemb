@@ -40,7 +40,7 @@ $sn = 1;
                                 </div>
 
                                 <div class="form-group my-3">
-                                    <a href="./edit_stock.php?id=<?php echo $row['stock_id']; ?>">
+                                    <a href="<?php if ($row['stock_status'] == 1) { ?> ./edit_stock.php?id=<?php echo $row['stock_id']; ?> <?php }elseif($row['stock_status'] == 2){ ?> javascript:void(0); <?php } ?>">
                                         <button class="btn btn-primary <?php if ($row['stock_status'] == 2) { ?> disabled <?php } ?>"> Invest</button>
                                     </a>
                                 </div>
