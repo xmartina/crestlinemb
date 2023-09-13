@@ -12,11 +12,12 @@ if (isset($_POST['create_stock'])) {
     $stock_interest = $_POST['stock_interest'];
     $stock_duration = $_POST['stock_duration'];
     $stock_status = $_POST['stock_status'];
-    $stock_id =  str_pad(rand(0, 9999999), 10, '0', STR_PAD_LEFT);
+    $stock_id = str_pad(rand(0, 9999999), 10, '0', STR_PAD_LEFT);
 
 // SQL query to insert data into the database
-        $create_stock = "INSERT INTO stock_investment (stock_id, stock_title, stock_amount, stock_interest, stock_duration, stock_status) VALUES (:stock_id, :stock_title, :stock_amount, :stock_interest, :stock_duration, :stock_status)";
-        $stock_db = $conn->prepare($create_stock);
+    if (true) {
+        $insert_stock = "INSERT INTO stock_investment (stock_id, stock_title, stock_amount, stock_interest, stock_duration, stock_status) VALUES (:stock_id, :stock_title, :stock_amount, :stock_interest, :stock_duration, :stock_status)";
+        $stock_db = $conn->prepare($insert_stock);
         $stock_db->execute([
             'stock_id' => $stock_id,
             'stock_title' => $stock_title,
@@ -25,14 +26,16 @@ if (isset($_POST['create_stock'])) {
             'stock_duration' => $stock_duration,
             'stock_status' => $stock_status
         ]);
+    }
+    if (true) {
+        $delay = 5;
+        $redirectURL = "dashboard.php";
+        toast_alert('success', 'Stock Plan Added Successfully', 'Approved');
+        header("refresh:$delay;url=$redirectURL");
 
-        if(true){
-            toast_alert('success','Stock Plan Added Successfully','Approved');
-
-        }else{
-            toast_alert('error','Sorry something went wrong');
-        }
-
+    } else {
+        toast_alert('error', 'Sorry something went wrong');
+    }
 }
 ?>
 
@@ -84,7 +87,7 @@ if (isset($_POST['create_stock'])) {
                                         <div class="col-md-6">
                                             <div class="form-group mb-4">
                                                 <label for="">Stock Status:</label>
-                                                <select name="acct_currency" id="" class="form-control basic" required>
+                                                <select name="stock_status" id="" class="form-control basic" required>
                                                     <option selected="selected">Select</option>
                                                     <option value="1">Active</option>
                                                     <option value="2">Inactive</option>
