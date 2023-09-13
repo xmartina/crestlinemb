@@ -83,8 +83,6 @@ if(isset($_POST['update_trans'])){
     if(true){
         toast_alert('success','Transaction updated successfully','Approved');
 
-
-
     }else{
         toast_alert('error','Sorry something went wrong');
 
