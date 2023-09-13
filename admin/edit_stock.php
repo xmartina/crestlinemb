@@ -61,12 +61,10 @@ $row = $data->fetch(PDO::FETCH_ASSOC);
                                         <div class="col-md-6">
                                             <div class="form-group mb-4">
                                                 <?php
-                                                function stock_status(){
-                                                    if($row['stock_status'] = 1){echo "Active";}elseif ($row['stock_status'] = 2){echo "Inactive";}
-                                                }
+                                                    if($row['stock_status'] = 1){ $stock_status = "Active" ;}elseif ($row['stock_status'] = 2){ $stock_status = "Inactive";}
                                                 ?>
                                                 <label for="">Stock Status:</label>
-                                                <select name="stock_status" id="" class="form-control basic" value="<?php stock_status(); ?>">
+                                                <select name="stock_status" id="" class="form-control basic" value="<?php echo $stock_status; ?>">
                                                     <option selected="selected">Select</option>
                                                     <option value="1">Active</option>
                                                     <option value="2">Inactive</option>
