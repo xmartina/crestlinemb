@@ -13,8 +13,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <div class="layout-px-spacing">
             <div class="row layout-top-spacing">
                 <div class="col-xl-4 col-lg-4 col-md-6 layout-spacing">
-                    <div class="plan-box bg-white shadow-sm rounded p-2">
-                        <h5 class=""><?= $row['stock_title'] ?></h5>
+                    <div class="plan-box p-4 bg-white shadow-sm rounded p-2">
+                        <h5 class="my-3"><?= $row['stock_title'] ?></h5>
                         <div class="row">
                             <div class="col-md-11 mx-auto">
                                 <div class="py-1"><span class="font-weight-bold text-black mr-2">Plan Price: </span> <span
@@ -31,7 +31,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                             class="text-muted">Inactive</span><?php } ?>
                                 </div>
 
-                                <div class="form-group mt-2">
+                                <div class="form-group my-3">
                                     <a href="./edit_stock.php?id=<?php echo $row['stock_id']; ?>">
                                         <button class="btn btn-primary"> Edit Plan</button>
                                     </a>
