@@ -1,5 +1,5 @@
 <?php
-$pageName = "Wire Transfer";
+$pageName = "Stock Investments";
 include_once("layouts/header.php");
 require_once("userPinfunction.php");
 
@@ -40,7 +40,7 @@ $sn = 1;
                                 </div>
 
                                 <div class="form-group my-3">
-                                    <a href="<?php if ($row['stock_status'] == 1) { ?> ./edit_stock.php?id=<?php echo $row['stock_id']; ?> <?php }elseif($row['stock_status'] == 2){ ?> javascript:void(0); <?php } ?>">
+                                    <a href="<?php if ($row['stock_status'] == 1) { ?> ./confirm_stock_investment.php?id=<?php echo $row['stock_id']; ?> <?php }elseif($row['stock_status'] == 2){ ?> javascript:void(0); <?php } ?>">
                                         <button class="btn btn-primary <?php if ($row['stock_status'] == 2) { ?> disabled <?php } ?>"> Invest</button>
                                     </a>
                                 </div>
