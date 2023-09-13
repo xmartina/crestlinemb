@@ -64,7 +64,7 @@ if (isset($_POST['create_stock'])) {
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group mb-4">
-                                                <label for="">Stock Amount: <span class="text-black bg-info p-2">USD</span>  </label>
+                                                <label for="">Stock Amount: <span class="text-white bg-info p-1 rounded shadow-sm">USD</span>  </label>
                                                 <input type="number"  name="stock_amount" class="form-control" id="" placeholder="Stock Amount:" required>
                                             </div>
                                         </div>
@@ -72,13 +72,13 @@ if (isset($_POST['create_stock'])) {
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group mb-4">
-                                                <label for="">Stock Interest: <span class="text-black bg-info p-2">%</span>  </label>
+                                                <label for="">Stock Interest: <span class="text-white bg-info p-1 rounded shadow-sm">%</span>  </label>
                                                 <input type="number"  name="stock_interest" class="form-control" id="" placeholder="Stock Interest:" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group mb-4">
-                                                <label for="">Stock Duration: <span class="text-black bg-info p-2">Days</span> </label>
+                                                <label for="">Stock Duration: <span class="text-white bg-info p-1 rounded shadow-sm">Days</span> </label>
                                                 <input type="number"  name="stock_duration" class="form-control" id="" placeholder="Stock Duration:" required>
                                             </div>
                                         </div>
