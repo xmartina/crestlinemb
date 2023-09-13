@@ -33,7 +33,7 @@ $row = $data->fetch(PDO::FETCH_ASSOC);
                                         <div class="col-md-6">
                                             <div class="form-group mb-4">
                                                 <label for="">Stock Title:</label>
-                                                <input type="text"  name="stock_title" class="form-control" id="" placeholder="Stock Title:" value="<?php $row['stock_title'] ?>">
+                                                <input type="text"  name="stock_title" class="form-control" id="" placeholder="value="<?php $row['stock_title'] ?>" value="<?php $row['stock_title'] ?>">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
