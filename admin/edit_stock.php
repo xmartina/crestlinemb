@@ -86,3 +86,6 @@ $row = $data->fetch(PDO::FETCH_ASSOC);
         </div>
     </div>
 </div>
+<?php
+require_once("./layout/footer.php");
+?>
