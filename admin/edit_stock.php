@@ -65,7 +65,7 @@ if (isset($_POST['modify_stock'])) {
                                                     <label for="">Stock Title:</label>
                                                     <input type="text" name="stock_title" class="form-control" id=""
                                                            placeholder="Stock Title:"
-                                                           value="<?php echo $row['stock_title']; ?>">
+                                                           value="<?= $row['stock_title']; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -75,7 +75,7 @@ if (isset($_POST['modify_stock'])) {
                                                     </label>
                                                     <input type="number" name="stock_amount" class="form-control" id=""
                                                            placeholder="Stock Amount:"
-                                                           value="<?php echo $row['stock_amount']; ?>">
+                                                           value="<?= $row['stock_amount']; ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -87,7 +87,7 @@ if (isset($_POST['modify_stock'])) {
                                                     </label>
                                                     <input type="number" name="stock_interest" class="form-control"
                                                            id="" placeholder="Stock Interest:"
-                                                           value="<?php echo $row['stock_interest']; ?>">
+                                                           value="<?= $row['stock_interest']; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -97,7 +97,7 @@ if (isset($_POST['modify_stock'])) {
                                                     </label>
                                                     <input type="number" name="stock_duration" class="form-control"
                                                            id="" placeholder="Stock Duration:"
-                                                           value="<?php echo $row['stock_duration']; ?>">
+                                                           value="<?= $row['stock_duration']; ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -113,9 +113,9 @@ if (isset($_POST['modify_stock'])) {
                                                     ?>
                                                     <label for="">Stock Status:</label>
                                                     <select name="stock_status" id="" class="form-control basic"
-                                                            value="<?php echo $stock_status; ?>">
+                                                            value="<?= $stock_status; ?>">
                                                         <option selected="selected"
-                                                                disabled><?php echo $stock_status; ?></option>
+                                                                disabled><?= $stock_status; ?></option>
                                                         <option value="1">Active</option>
                                                         <option value="2">Inactive</option>
                                                     </select>
