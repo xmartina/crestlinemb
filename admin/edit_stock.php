@@ -41,6 +41,29 @@ if (isset($_POST['modify_stock'])) {
     }
 }
 
+if(isset($_POST['delete_stock_plan'])){
+    $delete_stock_plan = $_POST['delete_stock_plan'];
+
+    $sql = "DELETE FROM stock_investment WHERE stock_id =$id";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([
+        // '$status_delete'=>$status_delete
+    ]);
+
+
+    if(true){
+        toast_alert('success','Stock Plan Deleted Successfully');
+        $delay = 5;
+        $redirectURL = "list_stock.php";
+        toast_alert('success', 'Stock Plan Deleted Successfully', 'Approved');
+        header("refresh:$delay;url=$redirectURL");
+    }else{
+        toast_alert('error', 'Sorry Something Went Wrong');
+    }
+
+
+
+}
 ?>
 
 
@@ -128,9 +151,14 @@ if (isset($_POST['modify_stock'])) {
 
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-12 text-center">
+                                            <div class="col-md-6 text-center">
                                                 <button type="submit" name="modify_stock" class="btn btn-primary mt-3">
                                                     Modify Stock
+                                                </button>
+                                            </div>
+                                            <div class="col-md-6 text-center">
+                                                <button type="submit" name="delete_stock_plan" class="btn btn-primary mt-3">
+                                                    Delete Stock
                                                 </button>
                                             </div>
                                         </div>
