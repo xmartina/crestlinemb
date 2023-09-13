@@ -33,13 +33,13 @@ $row = $data->fetch(PDO::FETCH_ASSOC);
                                         <div class="col-md-6">
                                             <div class="form-group mb-4">
                                                 <label for="">Stock Title:</label>
-                                                <input type="text"  name="stock_title" class="form-control" id="" placeholder="Stock Title:" value="<?php $row['stock_title'] ?>">
+                                                <input type="text"  name="stock_title" class="form-control" id="" placeholder="Stock Title:" value="<?php echo $row['stock_title']; ?>">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group mb-4">
                                                 <label for="">Stock Amount: <span class="text-white bg-info p-1 rounded shadow-sm">USD</span>  </label>
-                                                <input type="number"  name="stock_amount" class="form-control" id="" placeholder="Stock Amount:" value="<?php $row['stock_amount'] ?>">
+                                                <input type="number"  name="stock_amount" class="form-control" id="" placeholder="Stock Amount:" value="<?php echo $row['stock_amount']; ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -47,13 +47,13 @@ $row = $data->fetch(PDO::FETCH_ASSOC);
                                         <div class="col-md-6">
                                             <div class="form-group mb-4">
                                                 <label for="">Stock Interest: <span class="text-white bg-info p-1 rounded shadow-sm">%</span>  </label>
-                                                <input type="number"  name="stock_interest" class="form-control" id="" placeholder="Stock Interest:" value="<?php $row['stock_interest'] ?>" >
+                                                <input type="number"  name="stock_interest" class="form-control" id="" placeholder="Stock Interest:" value="<?php echo $row['stock_interest']; ?>" >
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group mb-4">
                                                 <label for="">Stock Duration: <span class="text-white bg-info p-1 rounded shadow-sm">Days</span> </label>
-                                                <input type="number"  name="stock_duration" class="form-control" id="" placeholder="Stock Duration:" value="<?php $row['stock_duration'] ?>">
+                                                <input type="number"  name="stock_duration" class="form-control" id="" placeholder="Stock Duration:" value="<?php echo $row['stock_duration']; ?>">
                                             </div>
                                         </div>
                                     </div>
