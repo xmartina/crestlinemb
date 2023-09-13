@@ -65,7 +65,7 @@ $row = $data->fetch(PDO::FETCH_ASSOC);
                                                 ?>
                                                 <label for="">Stock Status:</label>
                                                 <select name="stock_status" id="" class="form-control basic" value="<?php echo $stock_status; ?>">
-                                                    <option selected="selected">Select</option>
+                                                    <option selected="selected"><?php echo $stock_status; ?></option>
                                                     <option value="1">Active</option>
                                                     <option value="2">Inactive</option>
                                                 </select>
