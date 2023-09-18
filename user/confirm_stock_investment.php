@@ -26,4 +26,4 @@ require_once ('investment_id_generator.php');
 <div id="content" class="main-content">
     <div class="layout-px-spacing">
         <div class="row layout-top-spacing">
-<?=$randomString; ; ?>
+<?=$randomString; ?>
