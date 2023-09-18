@@ -41,18 +41,18 @@ $stock_duration = $stock_data['stock_duration'];
             <div class="layout-top-spacing">
                 <div class="row">
                     <div class="col-lg-1 d-none d-lg-block d-xl-block  d-sm-none d-md-none d-lg-block d-xl-block">S/N</div>
-                    <div class="col-lg-3 font-weight-bold d-none d-lg-block d-xl-block">Plan Name</div>
-                    <div class="col-lg-2 font-weight-bold d-none d-lg-block d-xl-block">Duration</div>
+                    <div class="col-lg-4 font-weight-bold d-none d-lg-block d-xl-block">Plan Name</div>
+<!--                    <div class="col-lg-2 font-weight-bold d-none d-lg-block d-xl-block">Duration</div>-->
                     <div class="col-lg-2 font-weight-bold d-none d-lg-block d-xl-block">Returns</div>
                     <div class="col-lg-1 font-weight-bold d-none d-lg-block d-xl-block">Status</div>
-                    <div class="col-lg-3 font-weight-bold d-none d-lg-block d-xl-block">Plan Reference No</div>
+                    <div class="col-lg-4 font-weight-bold d-none d-lg-block d-xl-block">Plan Reference No</div>
                 </div>
                 <div class="my-4"></div>
                 <?php while ($investment_data = $get_investment_hold->fetch(PDO::FETCH_ASSOC)) { ?>
                 <div class="bg-white py-2 px-3 rounded-2 mb-1">
                     <div class="row gy-2">
                         <div class="col-lg-1 d-none d-lg-block d-xl-block ">1</div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 font-weight-bold"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Name</span> <?=$investment_data['investment_plan_name'] ?></div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 font-weight-bold"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Name</span> <?=$investment_data['investment_plan_name'] ?></div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
 <!--                        --><?php //} ?>
 <!--                        --><?php //while ($stock_data = $get_stock_hold->fetch(PDO::FETCH_ASSOC)) { ?>
@@ -65,7 +65,7 @@ $stock_duration = $stock_data['stock_duration'];
 
                             <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Status</span> <?= $investment_data['investment_status'] ?></div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 font-weight-bold"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Reference No</span> <?= $investment_data['investment_ref_id'] ?></div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 font-weight-bold"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Reference No</span> <?= $investment_data['investment_ref_id'] ?></div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
                     </div>
                 </div>
