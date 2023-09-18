@@ -52,7 +52,7 @@ $stock_duration = $stock_data['stock_duration'];
                 <div class="bg-white py-2 px-3 rounded-2 mb-1">
                     <div class="row gy-2">
                         <div class="col-lg-1 d-none d-lg-block d-xl-block ">1</div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 font-weight-bold"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Name</span> <?=$investment_data['investment_plan_name'] ?></div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 font-weight-bold"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Name</span> <span class="text-info"> <?=$investment_data['investment_plan_name'] ?></span></div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
 <!--                        --><?php //} ?>
 <!--                        --><?php //while ($stock_data = $get_stock_hold->fetch(PDO::FETCH_ASSOC)) { ?>
