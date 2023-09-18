@@ -12,6 +12,7 @@ $stmt->execute([
 
 $invest_data = $stmt->fetch(PDO::FETCH_ASSOC);
 $invest_id = $invest_data['stock_id'];
+$invest_title = $invest_data['stock_title'];
 $get_user_data = "SELECT * FROM users WHERE id=:user_id";
 $user_data_hold = $conn->prepare($get_user_data);
 $user_data_hold->execute([
@@ -26,4 +27,20 @@ require_once ('investment_id_generator.php');
 <div id="content" class="main-content">
     <div class="layout-px-spacing">
         <div class="row layout-top-spacing">
+
+            <div class="bg-white rounded">
+                <div class="py-5">
+                    <div class="row">
+                        <div class="col-lg-4 offset-lg-4">
+                            <div class="py-5 px-4 rounded">
+                                <div class="h3">You are about to invest in the plan</div>
+                                <div class="text-muted"><?= $invest_title ?></div>
+                                <div class="pt-3 text-dark">with the sum of <b><?= $invest_title ?></b></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
 <?=$randomString; ?>
