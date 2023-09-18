@@ -37,9 +37,9 @@ if(isset($_POST['invest_now'])){
         toast_alert('error', 'you did not specify how much you are investing');
     }elseif ($amount_invested > $user_balance){
         toast_alert('error', 'you did not have sufficient balance for this plan');
-    }elseif ($amount_invested < $invest_min ){
+    }elseif ($amount_invested <= $invest_min ){
         toast_alert('error', 'you can not invest lesser than the plan price');
-    }elseif ($invest_max < $amount_invested ){
+    }elseif ($invest_max <= $amount_invested ){
         toast_alert('error', 'you can not invest higher than the plan price');
     }else{
         $plan_returns = $stock_interest * $amount_invested;
