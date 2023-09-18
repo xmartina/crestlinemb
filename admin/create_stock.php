@@ -16,7 +16,7 @@ if (isset($_POST['create_stock'])) {
     $stock_id = str_pad(rand(0, 9999999999), 10, '0', STR_PAD_LEFT);
 
     if ($stock_amount_min >= $stock_amount_max) {
-        toast_alert('error', 'Maximum investment should be greater than minimum');
+        toast_alert('error', 'Maximum investment amount should be greater than minimum');
     } else {
         // SQL query to insert data into the database
         $insert_stock = "INSERT INTO stock_investment (stock_id, stock_title, stock_amount_min, stock_amount_max, stock_interest, stock_duration, stock_status) VALUES (:stock_id, :stock_title, :stock_amount_min, :stock_amount_max, :stock_interest, :stock_duration, :stock_status)";
