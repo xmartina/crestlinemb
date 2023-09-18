@@ -6,14 +6,14 @@ include_once("layouts/header.php");
 require_once("userPinfunction.php");
 require_once('investment_id_generator.php'); // Include the investment_id_generator.php file
 
-$investment_id = $_GET['id'];
+$plan_investment_id = $_GET['id'];
 $investment_ref_id = $randomString; // Use the generateRandomString function to generate a random reference ID
 
 // Fetch stock investment details
 $sql = "SELECT * FROM stock_investment WHERE stock_id=:investment_id";
 $stmt = $conn->prepare($sql);
 $stmt->execute([
-    'investment_id' => $investment_id
+    'investment_id' => $plan_investment_id
 ]);
 
 $invest_data = $stmt->fetch(PDO::FETCH_ASSOC);
