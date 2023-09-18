@@ -101,7 +101,7 @@ if(isset($_POST['invest_now'])){
                                 <label for="">Input your investment amount below to confirm this deal</label>
                                 <input type="text"  name="confirm_invest_amount" class="form-control" id="" placeholder="Investment Amount:" required>
                                 <div class="py-3"></div>
-                                <label for="">Your account transfer pin</label>
+                                <label for="">Your account pin</label>
                                 <input type="text"  name="acct_pin" class="form-control" id="" placeholder="Your Account Pin:" required>
                                 <div class="row">
                                     <div class="col-md-12 text-center">
