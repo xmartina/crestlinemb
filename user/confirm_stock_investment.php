@@ -1,7 +1,6 @@
 <?php
 $pageName = "Confirm Stock Investments";
 include_once("layouts/header.php");
-$user_id = $row['id'];
 require_once("userPinfunction.php");
 $investment_id = $_GET['id'];
 
