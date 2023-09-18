@@ -36,6 +36,7 @@ $get_investment_hold->execute([
                     <div class="col-lg-1 font-weight-bold d-none d-lg-block d-xl-block">Status</div>
                     <div class="col-lg-3 font-weight-bold d-none d-lg-block d-xl-block">Plan Reference No</div>
                 </div>
+                <div class="my-4"></div>
                 <?php while ($investment_data = $get_investment_hold->fetch(PDO::FETCH_ASSOC)) { ?>
                 <?php } ?>
                 <div class="bg-white py-2 px-3 rounded-2 mb-1">
