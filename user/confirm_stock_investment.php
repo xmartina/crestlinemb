@@ -19,9 +19,10 @@ $user_data_hold->execute([
     'user_id'=>$user_id
 ]);
 $user_data = $user_data_hold->fetch(PDO::FETCH_ASSOC);
+$user_id = $user_data['id'];
 ?>
 
 <div id="content" class="main-content">
     <div class="layout-px-spacing">
         <div class="row layout-top-spacing">
-<?=$invest_id; ?>
+<?=$user_id ; ?>
