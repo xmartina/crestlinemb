@@ -30,6 +30,9 @@ $sn = 1;
                                             class="font-weight-bold text-black mr-2">Plan Duration: </span> <span
                                             class="text-muted"><?= $row['stock_duration'] ?> Days</span></div>
                                     <div class="py-1"><span
+                                            class="font-weight-bold text-black mr-2">Reference Id: </span> <span
+                                            class="text-muted"><?= $row['reference_id'] ?></span></div>
+                                    <div class="py-1"><span
                                             class="font-weight-bold text-black mr-2">Plan Status: </span> <?php if ($row['stock_status'] == 1) { ?>
                                             <span
                                                 class="text-muted">Active</span><?php } elseif ($row['stock_status'] == 2) { ?>
