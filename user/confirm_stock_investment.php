@@ -25,6 +25,7 @@ $invest_max = $invest_data['stock_amount_max'];
 $investment_plan_name = $invest_data['stock_title'];
 $stock_interest = $invest_data['stock_interest'];
 
+
 // Fetch user data
 $get_user_data = "SELECT * FROM users WHERE id=:user_id";
 $user_data_hold = $conn->prepare($get_user_data);
@@ -34,14 +35,18 @@ $user_data_hold->execute([
 $user_data = $user_data_hold->fetch(PDO::FETCH_ASSOC);
 $user_id = $user_data['id'];
 $user_balance = $user_data['acct_balance'];
+$user_acct_pin = $user_data['acct_pin'];
 
 if(isset($_POST['invest_now'])){
     $amount_invested = $_POST['confirm_invest_amount'];
+    $acct_pin = inputValidation($_POST['acct_pin']);
 
     if($amount_invested == ''){
         toast_alert('error', 'You did not specify how much you are investing');
     } elseif ($amount_invested > $user_balance){
         toast_alert('error', 'You do not have sufficient balance for this plan');
+    }elseif ($user_acct_pin != $acct_pin ){
+        toast_alert('error', 'Incorrect account pin');
     } elseif ($amount_invested < $invest_min ){
         toast_alert('error', 'You cannot invest less than the plan price');
     } elseif ($invest_max < $amount_invested ){
@@ -95,6 +100,9 @@ if(isset($_POST['invest_now'])){
                             <form method="post">
                                 <label for="">Input your investment amount below to confirm this deal</label>
                                 <input type="text"  name="confirm_invest_amount" class="form-control" id="" placeholder="Investment Amount:" required>
+                                <div class="py-3"></div>
+                                <label for="">Your account transfer pin</label>
+                                <input type="text"  name="acct_pin" class="form-control" id="" placeholder="Your Account Pin:" required>
                                 <div class="row">
                                     <div class="col-md-12 text-center">
                                         <button type="submit" name="invest_now" class="btn btn-primary mt-3">Invest Now</button>
