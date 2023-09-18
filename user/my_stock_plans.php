@@ -33,7 +33,7 @@ $investment_data['investment_plan_name'];
                     <div class="col-lg-3 font-weight-bold">Plan Name</div>
                     <div class="col-lg-2">Plans Duration</div>
                     <div class="col-lg-2">Plan Returns</div>
-                    <div class="col-lg-1">Plan Status</div>
+                    <div class="col-lg-1">Status</div>
                     <div class="col-lg-3">Plan Reference No</div>
                 </div>
                 <?php while ($investment_data = $get_investment_hold->fetch(PDO::FETCH_ASSOC)) { ?>
