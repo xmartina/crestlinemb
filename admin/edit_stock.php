@@ -12,19 +12,21 @@ $row = $data->fetch(PDO::FETCH_ASSOC);
 
 if (isset($_POST['modify_stock'])) {
     $stock_title = $_POST['stock_title'];
-    $stock_amount = $_POST['stock_amount'];
+    $stock_amount_min = $_POST['stock_amount_min'];
+    $stock_amount_max = $_POST['stock_amount_max'];
     $stock_interest = $_POST['stock_interest'];
     $stock_duration = $_POST['stock_duration'];
     $stock_status = $_POST['stock_status'];
     $id = $_GET['id'];
     $stock_id = $id;
 
-    $sql = "UPDATE stock_investment SET stock_id=:stock_id, stock_title=:stock_title, stock_amount=:stock_amount, stock_interest=:stock_interest, stock_duration=:stock_duration, stock_status=:stock_status WHERE stock_id=:id";
+    $sql = "UPDATE stock_investment SET stock_id=:stock_id, stock_title=:stock_title, stock_amount_min=:stock_amount_min,stock_amount_max=:stock_amount_max, stock_interest=:stock_interest, stock_duration=:stock_duration, stock_status=:stock_status WHERE stock_id=:id";
     $stmt = $conn->prepare($sql);
     $stmt->execute([
         'stock_id' => $stock_id,
         'stock_title' => $stock_title,
-        'stock_amount' => $stock_amount,
+        'stock_amount_min' => $stock_amount_min,
+        'stock_amount_max' => $stock_amount_max,
         'stock_interest' => $stock_interest,
         'stock_duration' => $stock_duration,
         'stock_status' => $stock_status,
@@ -95,12 +97,24 @@ if(isset($_POST['delete_stock_plan'])){
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group mb-4">
-                                                    <label for="">Stock Amount: <span
-                                                            class="text-white bg-info p-1 rounded shadow-sm">USD</span>
-                                                    </label>
-                                                    <input type="number" name="stock_amount" class="form-control" id=""
-                                                           placeholder="Stock Amount:"
-                                                           value="<?= $row['stock_amount']; ?>">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <label for="">Stock Amount Min: <span
+                                                                    class="text-white bg-info p-1 rounded shadow-sm">USD</span>
+                                                            </label>
+                                                            <input type="number" name="stock_amount_min" class="form-control" id=""
+                                                                   placeholder="Minimum Stock Amount:"
+                                                                   value="<?= $row['stock_amount_min']; ?>">
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <label for="">Stock Amount Max: <span
+                                                                    class="text-white bg-info p-1 rounded shadow-sm">USD</span>
+                                                            </label>
+                                                            <input type="number" name="stock_amount_max" class="form-control" id=""
+                                                                   placeholder="Maximum Stock Amount:"
+                                                                   value="<?= $row['stock_amount_max']; ?>">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
