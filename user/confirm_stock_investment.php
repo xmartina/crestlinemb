@@ -1,6 +1,7 @@
 <?php
 $pageName = "Confirm Stock Investments";
 include_once("layouts/header.php");
+$user_id = $row['id'];
 require_once("userPinfunction.php");
 
 $sql = "SELECT * FROM stock_investment WHERE id=:user_id";
