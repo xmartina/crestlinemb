@@ -28,7 +28,7 @@ $investment_data['investment_plan_name'];
     <div id="content" class="main-content">
         <div class="layout-px-spacing">
             <div class="layout-top-spacing">
-                <div class="row d-none d-lg-block d-xl-block">
+                <div class="row d-sm-none d-md-none d-lg-block d-xl-block">
                     <div class="col-lg-1 d-none d-lg-block d-xl-block ">S/N</div>
                     <div class="col-lg-3 font-weight-bold">Plan Name</div>
                     <div class="col-lg-2">Plans Duration</div>
