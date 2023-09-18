@@ -64,9 +64,9 @@ $stock_duration = $stock_data['stock_duration'];
                             <?php $investmentStatus = $investment_data['investment_status'];
 
                             if ($investmentStatus == 0) {
-                                echo "Running";
+                                $investmentStatus = "Running";
                             } elseif ($investmentStatus == 1) {
-                                echo "Completed";
+                                $investmentStatus = "Completed";
                             }
                             ?>
 
