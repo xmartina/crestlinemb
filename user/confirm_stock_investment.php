@@ -3,6 +3,8 @@ $pageName = "Confirm Stock Investments";
 include_once("layouts/header.php");
 require_once("userPinfunction.php");
 $investment_id = $_GET['id'];
+require_once ('investment_id_generator.php');
+$investment_ref_id = $randomString;
 
 $sql = "SELECT * FROM stock_investment WHERE stock_id=:investment_id";
 $stmt = $conn->prepare($sql);
@@ -11,10 +13,12 @@ $stmt->execute([
 ]);
 
 $invest_data = $stmt->fetch(PDO::FETCH_ASSOC);
-$invest_id = $invest_data['stock_id'];
+$stock_investment_id = $invest_data['stock_id'];
 $invest_title = $invest_data['stock_title'];
 $invest_min = $invest_data['stock_amount_min'];
 $invest_max = $invest_data['stock_amount_max'];
+$investment_plan_name = $invest_data['stock_title'];
+$stock_interest = $invest_data['stock_interest'];
 
 $get_user_data = "SELECT * FROM users WHERE id=:user_id";
 $user_data_hold = $conn->prepare($get_user_data);
@@ -38,6 +42,8 @@ if(isset($_POST['invest_now'])){
     }elseif ($amount_invested > $invest_max){
         toast_alert('error', 'you can not invest higher than the plan price');
     }else{
+        $plan_returns = $stock_interest * $amount_invested;
+        $investment_status = "running";
         $insert_investment = "INSERT INTO investments (user_id, stock_investment_id,investment_ref_id, investment_plan_name, amount_invested, plan_returns, investment_status) VALUES (:user_id,:stock_investment_id,:investment_ref_id,:investment_plan_name,:amount_invested,:plan_returns,:investment_status)";
         $insert_invest_db = $conn->prepare($insert_investment);
         $hold_invest = $insert_invest_db ->execute([
@@ -48,6 +54,7 @@ if(isset($_POST['invest_now'])){
             'amount_invested'=>$amount_invested,
             'plan_returns'=>$plan_returns,
             'investment_status'=>$investment_status
+            ]);
     }
 }
 ?>
