@@ -3,7 +3,7 @@ $pageName = "Confirm Stock Investments";
 include_once("layouts/header.php");
 require_once("userPinfunction.php");
 
-$sql = "SELECT * FROM stock_investment ORDER BY date ASC, time ASC";
+$sql = "SELECT * FROM stock_investment WHERE id=:user_id";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $sn = 1;
@@ -14,4 +14,10 @@ $user_data_hold->execute([
     'user_id'=>$user_id
 ]);
 $user_data = $user_data_hold->fetch(PDO::FETCH_ASSOC);
+$user_data['user_id'];
 ?>
+
+<div id="content" class="main-content">
+    <div class="layout-px-spacing">
+        <div class="row layout-top-spacing">
+<?=$user_data['user_id']; ?>
