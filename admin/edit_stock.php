@@ -20,26 +20,31 @@ if (isset($_POST['modify_stock'])) {
     $id = $_GET['id'];
     $stock_id = $id;
 
-    $sql = "UPDATE stock_investment SET stock_id=:stock_id, stock_title=:stock_title, stock_amount_min=:stock_amount_min,stock_amount_max=:stock_amount_max, stock_interest=:stock_interest, stock_duration=:stock_duration, stock_status=:stock_status WHERE stock_id=:id";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute([
-        'stock_id' => $stock_id,
-        'stock_title' => $stock_title,
-        'stock_amount_min' => $stock_amount_min,
-        'stock_amount_max' => $stock_amount_max,
-        'stock_interest' => $stock_interest,
-        'stock_duration' => $stock_duration,
-        'stock_status' => $stock_status,
-        'id' => $id
-    ]);
-
-    if ($stmt->rowCount() > 0) {
-        $delay = 5;
-        $redirectURL = "list_stock.php";
-        toast_alert('success', 'Stock Plan Updated Successfully', 'Approved');
-        header("refresh:$delay;url=$redirectURL");
+    if ($stock_amount_min >= $stock_amount_max) {
+        toast_alert('error', 'Maximum investment should be greater than minimum');
     } else {
-        toast_alert('error', 'Sorry something went wrong');
+
+        $sql = "UPDATE stock_investment SET stock_id=:stock_id, stock_title=:stock_title, stock_amount_min=:stock_amount_min,stock_amount_max=:stock_amount_max, stock_interest=:stock_interest, stock_duration=:stock_duration, stock_status=:stock_status WHERE stock_id=:id";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([
+            'stock_id' => $stock_id,
+            'stock_title' => $stock_title,
+            'stock_amount_min' => $stock_amount_min,
+            'stock_amount_max' => $stock_amount_max,
+            'stock_interest' => $stock_interest,
+            'stock_duration' => $stock_duration,
+            'stock_status' => $stock_status,
+            'id' => $id
+        ]);
+
+        if ($stmt->rowCount() > 0) {
+            $delay = 5;
+            $redirectURL = "list_stock.php";
+            toast_alert('success', 'Stock Plan Updated Successfully', 'Approved');
+            header("refresh:$delay;url=$redirectURL");
+        } else {
+            toast_alert('error', 'Sorry something went wrong');
+        }
     }
 }
 
