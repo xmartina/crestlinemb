@@ -15,7 +15,7 @@ $user_data = $user_data_hold->fetch(PDO::FETCH_ASSOC);
 $user_id = $user_data['id'];
 
 //fetch investment data
-$get_investment_data = "SELECT * FROM investments LEFT JOIN stock_investment WHERE user_id=:user_id";
+$get_investment_data = "SELECT * FROM investments WHERE user_id=:user_id";
 $get_investment_hold = $conn->prepare($get_investment_data);
 $get_investment_hold->execute([
     'user_id' => $user_id
