@@ -15,26 +15,32 @@ if (isset($_POST['create_stock'])) {
     $stock_status = $_POST['stock_status'];
     $stock_id = str_pad(rand(0, 9999999999), 10, '0', STR_PAD_LEFT);
 
-    // SQL query to insert data into the database
-    $insert_stock = "INSERT INTO stock_investment (stock_id, stock_title, stock_amount_min,stock_amount_max, stock_interest, stock_duration, stock_status) VALUES (:stock_id, :stock_title, :stock_amount_min,:stock_amount_max, :stock_interest, :stock_duration, :stock_status)";
-    $stock_db = $conn->prepare($insert_stock);
-    $result = $stock_db->execute([
-        'stock_id' => $stock_id,
-        'stock_title' => $stock_title,
-        'stock_amount_min' => $stock_amount_min,
-        'stock_amount_max' => $stock_amount_max,
-        'stock_interest' => $stock_interest,
-        'stock_duration' => $stock_duration,
-        'stock_status' => $stock_status
-    ]);
+    if ($stock_amount_min <= $stock_amount_max){
+        toast_alert('error', 'Maximum investment should be greater than minimum');
+    }
+    else {
 
-    if ($result) {
-        $delay = 5;
-        $redirectURL = "list_stock.php";
-        toast_alert('success', 'Stock Plan Added Successfully', 'Approved');
-        header("refresh:$delay;url=$redirectURL");
-    } else {
-        toast_alert('error', 'Sorry something went wrong');
+        // SQL query to insert data into the database
+        $insert_stock = "INSERT INTO stock_investment (stock_id, stock_title, stock_amount_min,stock_amount_max, stock_interest, stock_duration, stock_status) VALUES (:stock_id, :stock_title, :stock_amount_min,:stock_amount_max, :stock_interest, :stock_duration, :stock_status)";
+        $stock_db = $conn->prepare($insert_stock);
+        $result = $stock_db->execute([
+            'stock_id' => $stock_id,
+            'stock_title' => $stock_title,
+            'stock_amount_min' => $stock_amount_min,
+            'stock_amount_max' => $stock_amount_max,
+            'stock_interest' => $stock_interest,
+            'stock_duration' => $stock_duration,
+            'stock_status' => $stock_status
+        ]);
+
+        if ($result) {
+            $delay = 5;
+            $redirectURL = "list_stock.php";
+            toast_alert('success', 'Stock Plan Added Successfully', 'Approved');
+            header("refresh:$delay;url=$redirectURL");
+        } else {
+            toast_alert('error', 'Sorry something went wrong');
+        }
     }
 }
 
