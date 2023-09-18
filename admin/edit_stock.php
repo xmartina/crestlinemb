@@ -11,7 +11,7 @@ $data->execute(['id' => $id]);
 $row = $data->fetch(PDO::FETCH_ASSOC);
 
 if (isset($_POST['modify_stock'])) {
-    $stock_title = $_POST['stock_title'];
+    $stock_title = htmlspecialchars($_POST['stock_title']);
     $stock_amount_min = $_POST['stock_amount_min'];
     $stock_amount_max = $_POST['stock_amount_max'];
     $stock_interest = $_POST['stock_interest'];
@@ -94,30 +94,23 @@ if(isset($_POST['delete_stock_plan'])){
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group mb-4">
-                                                    <label for="">Stock Title:</label>
-                                                    <input type="text" name="stock_title" class="form-control" id=""
-                                                           placeholder="Stock Title:"
-                                                           value="<?= $row['stock_title']; ?>">
+                                                    <label for="stock_title">Stock Title:</label>
+                                                    <input type="text" name="stock_title" class="form-control" id="stock_title"
+                                                           placeholder="Stock Title" value="<?= htmlspecialchars($row['stock_title']); ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group mb-4">
                                                     <div class="row">
                                                         <div class="col-sm-6">
-                                                            <label for="">Stock Amount Min: <span
-                                                                    class="text-white bg-info p-1 rounded shadow-sm">USD</span>
-                                                            </label>
-                                                            <input type="number" name="stock_amount_min" class="form-control" id=""
-                                                                   placeholder="Minimum Stock Amount:"
-                                                                   value="<?= $row['stock_amount_min']; ?>">
+                                                            <label for="stock_amount_min">Stock Amount Min: <span class="text-white bg-info p-1 rounded shadow-sm">USD</span></label>
+                                                            <input type="number" name="stock_amount_min" class="form-control" id="stock_amount_min"
+                                                                   placeholder="Minimum Stock Amount" value="<?= $row['stock_amount_min']; ?>">
                                                         </div>
                                                         <div class="col-sm-6">
-                                                            <label for="">Stock Amount Max: <span
-                                                                    class="text-white bg-info p-1 rounded shadow-sm">USD</span>
-                                                            </label>
-                                                            <input type="number" name="stock_amount_max" class="form-control" id=""
-                                                                   placeholder="Maximum Stock Amount:"
-                                                                   value="<?= $row['stock_amount_max']; ?>">
+                                                            <label for="stock_amount_max">Stock Amount Max: <span class="text-white bg-info p-1 rounded shadow-sm">USD</span></label>
+                                                            <input type="number" name="stock_amount_max" class="form-control" id="stock_amount_max"
+                                                                   placeholder="Maximum Stock Amount" value="<?= $row['stock_amount_max']; ?>">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -126,48 +119,29 @@ if(isset($_POST['delete_stock_plan'])){
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group mb-4">
-                                                    <label for="">Stock Interest: <span
-                                                            class="text-white bg-info p-1 rounded shadow-sm">%</span>
-                                                    </label>
-                                                    <input type="number" name="stock_interest" class="form-control"
-                                                           id="" placeholder="Stock Interest:"
-                                                           value="<?= $row['stock_interest']; ?>">
+                                                    <label for="stock_interest">Stock Interest: <span class="text-white bg-info p-1 rounded shadow-sm">%</span></label>
+                                                    <input type="number" name="stock_interest" class="form-control" id="stock_interest"
+                                                           placeholder="Stock Interest" value="<?= $row['stock_interest']; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group mb-4">
-                                                    <label for="">Stock Duration: <span
-                                                            class="text-white bg-info p-1 rounded shadow-sm">Days</span>
-                                                    </label>
-                                                    <input type="number" name="stock_duration" class="form-control"
-                                                           id="" placeholder="Stock Duration:"
-                                                           value="<?= $row['stock_duration']; ?>">
+                                                    <label for="stock_duration">Stock Duration: <span class="text-white bg-info p-1 rounded shadow-sm">Days</span></label>
+                                                    <input type="number" name="stock_duration" class="form-control" id="stock_duration"
+                                                           placeholder="Stock Duration" value="<?= $row['stock_duration']; ?>">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group mb-4">
-                                                    <?php
-                                                    if ($row['stock_status'] == 1) {
-                                                        $stock_status = "Active";
-                                                    } elseif ($row['stock_status'] == 2) {
-                                                        $stock_status = "Inactive";
-                                                    }
-                                                    ?>
-                                                    <label for="">Stock Status:</label>
-                                                    <select name="stock_status" id="" class="form-control basic"
-                                                            value="<?= $stock_status; ?>">
-                                                        <option selected="selected"
-                                                                disabled><?= $stock_status; ?></option>
-                                                        <option value="1">Active</option>
-                                                        <option value="2">Inactive</option>
+                                                    <label for="stock_status">Stock Status:</label>
+                                                    <select name="stock_status" id="stock_status" class="form-control">
+                                                        <option value="1" <?= ($row['stock_status'] == 1) ? 'selected' : ''; ?>>Active</option>
+                                                        <option value="2" <?= ($row['stock_status'] == 2) ? 'selected' : ''; ?>>Inactive</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group mb-4">
-
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 text-center">
@@ -190,6 +164,7 @@ if(isset($_POST['delete_stock_plan'])){
             </div>
         </div>
     </div>
+
 <?php
 require_once("./layout/footer.php");
 ?>
