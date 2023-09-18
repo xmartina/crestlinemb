@@ -47,7 +47,7 @@ $get_investment_hold->execute([
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
                         <div class="col-lg-2 col-md-6 col-sm-12 font-weight-bold"><span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Returns</span> Plan Returns</div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
-                        <div class="col-lg-1 col-md-6 col-sm-12"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Status</span> Plan Status</div>
+                        <div class="col-lg-1 col-md-6 col-sm-12"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Status</span> Status</div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
                         <div class="col-lg-3 col-md-6 col-sm-12 font-weight-bold"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Reference No</span> Plan Reference No</div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
