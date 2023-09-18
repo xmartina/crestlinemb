@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 $pageName = "Confirm Stock Investments";
 include_once("layouts/header.php");
 require_once("userPinfunction.php");
