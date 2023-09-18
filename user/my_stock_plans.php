@@ -61,9 +61,16 @@ $stock_duration = $stock_data['stock_duration'];
                         <div class="col-lg-2 col-md-6 col-sm-12 font-weight-bold"><span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Returns</span> <?=$investment_data['plan_returns'] ?></div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
                         <div class="col-lg-1 col-md-6 col-sm-12">
-                            <?php if ($investment_data['investment_status'] == 0){ echo $invest_status; ?> <?php $invest_status ="Running"; ?><?php }elseif($investment_data['investment_status'] == 1){ echo $invest_status; ?> <?php $invest_status = "Completed"; ?> <?php } ?>
+                            <?php $investmentStatus = $investment_data['investment_status'];
 
-                            <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Status</span> <?= $invest_status ?></div>
+                            if ($investmentStatus == 0) {
+                                echo "Running";
+                            } elseif ($investmentStatus == 1) {
+                                echo "Completed";
+                            }
+                            ?>
+
+                            <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Status</span> <?= $investmentStatus ?></div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
                         <div class="col-lg-4 col-md-6 col-sm-12 font-weight-bold"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Reference No</span> <?= $investment_data['investment_ref_id'] ?></div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
