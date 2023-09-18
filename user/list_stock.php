@@ -24,7 +24,8 @@ $sn = 1;
                             <div class="widget-content">
                                 <div class="py-1"><span class="font-weight-bold text-black mr-2">Plan Price: </span>
                                     <span
-                                        class="text-muted"><?= $row['stock_amount'] ?> USD</span></div>
+                                        class="text-muted"><?= $row['stock_amount_min'] ?></span> - <span
+                                        class="text-muted"><?= $row['stock_amount_max'] ?> USD</span></div>
                                 <div class="py-1"><span
                                         class="font-weight-bold text-black mr-2">Plan Interest: </span> <span
                                         class="text-muted"><?= $row['stock_interest'] ?> %</span></div>
