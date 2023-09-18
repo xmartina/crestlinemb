@@ -20,9 +20,10 @@ $user_data_hold->execute([
 $user_data = $user_data_hold->fetch(PDO::FETCH_ASSOC);
 $user_id = $user_data['id'];
 $user_balance = $user_data['acct_balance'];
+require_once ('investment_id_generator.php');
 ?>
 
 <div id="content" class="main-content">
     <div class="layout-px-spacing">
         <div class="row layout-top-spacing">
-<?=$user_balance ; ?>
+<?=$randomString; ; ?>
