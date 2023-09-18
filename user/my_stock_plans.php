@@ -70,7 +70,7 @@ $stock_duration = $stock_data['stock_duration'];
                             }
                             ?>
 
-                            <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Status</span> <?= $investmentStatus ?></div>
+                            <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Status</span> <span class="<?php if ($investmentStatus == 0) { ?> text-success <?php  } elseif ($investmentStatus == 1) { ?> text-danger <?php } ?>"> <?= $investmentStatus ?> </span> </div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
                         <div class="col-lg-4 col-md-6 col-sm-12 font-weight-bold"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Reference No</span> <?= $investment_data['investment_ref_id'] ?></div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
