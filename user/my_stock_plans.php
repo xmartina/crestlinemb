@@ -42,15 +42,15 @@ $get_investment_hold->execute([
                     <div class="row">
                         <div class="col-lg-1 d-none d-lg-block d-xl-block ">1</div>
                         <div class="col-lg-3 col-md-6 col-sm-12 font-weight-bold"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Name</span> Plan Name</div>
-                        <div class="d-lg-none d-xl-none d-md-block d-sm-block my-2"></div>
+                        <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
                         <div class="col-lg-2 col-md-6 col-sm-12"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Duration</span> Plans Duration</div>
-                        <div class="d-lg-none d-xl-none d-md-block d-sm-block my-5"></div>
+                        <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
                         <div class="col-lg-2 col-md-6 col-sm-12 font-weight-bold"><span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Returns</span> Plan Returns</div>
-                        <div class="d-lg-none d-xl-none d-md-block d-sm-block my-5"></div>
+                        <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
                         <div class="col-lg-1 col-md-6 col-sm-12"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Status</span> Plan Status</div>
-                        <div class="d-lg-none d-xl-none d-md-block d-sm-block my-5"></div>
+                        <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
                         <div class="col-lg-3 col-md-6 col-sm-12 font-weight-bold"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Reference No</span> Plan Reference No</div>
-                        <div class="d-lg-none d-xl-none d-md-block d-sm-block my-5"></div>
+                        <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
                     </div>
                 </div>
             </div>
