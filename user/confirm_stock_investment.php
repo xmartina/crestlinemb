@@ -7,7 +7,7 @@ require_once("userPinfunction.php");
 require_once('investment_id_generator.php'); // Include the investment_id_generator.php file
 
 $investment_id = $_GET['id'];
-$investment_ref_id = generateRandomString(); // Use the generateRandomString function to generate a random reference ID
+$investment_ref_id = $randomString; // Use the generateRandomString function to generate a random reference ID
 
 // Fetch stock investment details
 $sql = "SELECT * FROM stock_investment WHERE stock_id=:investment_id";
