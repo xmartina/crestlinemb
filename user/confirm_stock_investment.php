@@ -60,6 +60,25 @@ if(isset($_POST['invest_now'])){
             'plan_returns' => $plan_returns,
             'investment_status' => $investment_status
         ]);
+
+        if ($hold_invest) {
+            $new_bal = $user_balance - $amount_invested; // Subtract the invested amount from the user's balance
+            $update_user_balance = "UPDATE users SET acct_balance=:acct_balance WHERE id=:user_id";
+            $update_user_balance_hold = $conn->prepare($update_user_balance);
+            $update_user_balance_hold->execute([
+                'acct_balance' => $new_bal,
+                'user_id' => $user_id
+            ]);
+
+            if ($update_user_balance_hold) {
+                $delay = 5;
+                $redirectURL = "my_stock_plans.php";
+                toast_alert('success', 'Your Investment Was Successful!', 'Approved');
+                header("refresh:$delay;url=$redirectURL");
+            } else{
+                toast_alert('error', 'Sorry Something Went Wrong');
+            }
+        }
     }
 }
 ?>
