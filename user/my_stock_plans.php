@@ -52,15 +52,15 @@ $stock_duration = $stock_data['stock_duration'];
                 <div class="bg-white py-2 px-3 rounded-2 mb-1">
                     <div class="row gy-2">
                         <div class="col-lg-1 d-none d-lg-block d-xl-block ">1</div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 font-weight-bold py-3"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Name</span> <span class="text-info"> <?=$investment_data['investment_plan_name'] ?></span></div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 font-weight-bold py-2"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Name</span> <span class="text-info"> <?=$investment_data['investment_plan_name'] ?></span></div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
 <!--                        --><?php //} ?>
 <!--                        --><?php //while ($stock_data = $get_stock_hold->fetch(PDO::FETCH_ASSOC)) { ?>
 <!--                        <div class="col-lg-2 col-md-6 col-sm-12"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Duration</span> --><?php //= $stock_data['stock_duration']; ?><!--</div>-->
 <!--                        <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>-->
-                        <div class="col-lg-2 col-md-6 col-sm-12 font-weight-bold"><span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Returns</span> <?=$investment_data['plan_returns'] ?></div>
+                        <div class="col-lg-2 col-md-6 col-sm-12 font-weight-bold py-2"><span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Returns</span> <?=$investment_data['plan_returns'] ?></div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
-                        <div class="col-lg-1 col-md-6 col-sm-12">
+                        <div class="col-lg-1 col-md-6 col-sm-12 py-2">
                             <?php $investmentStatus = $investment_data['investment_status'];
 
                             if ($investmentStatus == 0) {
@@ -72,7 +72,7 @@ $stock_duration = $stock_data['stock_duration'];
 
                             <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Status</span> <span class="<?php if ($investmentStatus == 0) { ?> text-success <?php  } elseif ($investmentStatus == 1) { ?> text-danger <?php } ?>"> <?= $investmentStatus ?> </span> </div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 font-weight-bold"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Reference No</span> <?= $investment_data['investment_ref_id'] ?></div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 font-weight-bold py-2"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Reference No</span> <?= $investment_data['investment_ref_id'] ?></div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
                     </div>
                 </div>
