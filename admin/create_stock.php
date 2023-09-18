@@ -1,5 +1,7 @@
 <?php
 require_once ("./layout/header.php");
+$id_lenght = 13;
+require_once ('id_generator.php');
 ?>
 
 <?php
@@ -13,15 +15,17 @@ if (isset($_POST['create_stock'])) {
     $stock_interest = $_POST['stock_interest'];
     $stock_duration = $_POST['stock_duration'];
     $stock_status = $_POST['stock_status'];
+    $reference_id =  $randomString;
 
     if ($stock_amount_min >= $stock_amount_max) {
         toast_alert('error', 'Maximum investment should be greater than minimum');
     } else {
         // SQL query to insert data into the database
-        $insert_stock = "INSERT INTO stock_investment (stock_title, stock_amount_min, stock_amount_max, stock_interest, stock_duration, stock_status) VALUES (:stock_title, :stock_amount_min, :stock_amount_max, :stock_interest, :stock_duration, :stock_status)";
+        $insert_stock = "INSERT INTO stock_investment (stock_title,reference_id, stock_amount_min, stock_amount_max, stock_interest, stock_duration, stock_status) VALUES (:stock_title, :reference_id, :stock_amount_min, :stock_amount_max, :stock_interest, :stock_duration, :stock_status)";
         $stock_db = $conn->prepare($insert_stock);
         $result = $stock_db->execute([
             'stock_title' => $stock_title,
+            'reference_id' => $reference_id,
             'stock_amount_min' => $stock_amount_min,
             'stock_amount_max' => $stock_amount_max,
             'stock_interest' => $stock_interest,

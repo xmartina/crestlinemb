@@ -31,6 +31,7 @@ require_once ('investment_id_generator.php');
             <div class="bg-white rounded">
                 <div class="py-5">
                     <div class="row">
+                        <div class="col-lg-4"></div>
                         <div class="col-lg-4 offset-lg-4">
                             <div class="py-5 px-4 rounded">
                                 <div class="h3">You are about to invest in the plan</div>
