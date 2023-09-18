@@ -7,7 +7,7 @@ $investment_id = $_GET['id'];
 $sql = "SELECT * FROM stock_investment WHERE stock_id=:investment_id";
 $stmt = $conn->prepare($sql);
 $stmt->execute([
-    'investment_id'=> $investment_id
+    'investment_id' => $investment_id
 ]);
 
 $invest_data = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -16,32 +16,29 @@ $invest_title = $invest_data['stock_title'];
 $get_user_data = "SELECT * FROM users WHERE id=:user_id";
 $user_data_hold = $conn->prepare($get_user_data);
 $user_data_hold->execute([
-    'user_id'=>$user_id
+    'user_id' => $user_id
 ]);
 $user_data = $user_data_hold->fetch(PDO::FETCH_ASSOC);
 $user_id = $user_data['id'];
 $user_balance = $user_data['acct_balance'];
-require_once ('investment_id_generator.php');
+require_once('investment_id_generator.php');
 ?>
 
-<div id="content" class="main-content">
-    <div class="layout-px-spacing">
-        <div class="row layout-top-spacing">
+    <div id="content" class="main-content">
+        <div class="layout-px-spacing">
+            <div class="row layout-top-spacing">
 
-            <div class="bg-white rounded">
-                <div class="py-5">
-                    <div class="row">
-                        <div class="col-lg-4"></div>
-                        <div class="col-lg-4 offset-lg-4">
-                            <div class="py-5 px-4 rounded">
-                                <div class="h3">You are about to invest in the plan</div>
-                                <div class="text-muted"><?= $invest_title ?></div>
-                                <div class="pt-3 text-dark">with the sum of <b><?= $invest_title ?></b></div>
+                <div class="col-xl-4 col-lg-4 col-md-6 layout-spacing offset-4">
+                    <div class="plan-box p-4 bg-white shadow-sm rounded p-2">
+                        <h5 class="my-3 text-capitalize"><?= $row['stock_title'] ?></h5>
+                        <div class="row">
+                            <div class="col-md-11 mx-auto">
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-<?=$randomString; ?>
+<?= $randomString; ?>
