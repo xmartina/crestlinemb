@@ -30,7 +30,7 @@ $investment_data['investment_plan_name'];
             <div class="layout-top-spacing">
                 <?php while ($investment_data = $get_investment_hold->fetch(PDO::FETCH_ASSOC)) { ?>
                 <?php } ?>
-                <div class="bg-white rounded-2 mb-1">
+                <div class="bg-white py-2 px-3 rounded-2 mb-1">
                     <div class="row">
                         <div class="col-sm-1">1</div>
                         <div class="col-sm-2">Plan Name</div>
