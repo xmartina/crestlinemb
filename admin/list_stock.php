@@ -20,7 +20,7 @@ $sn = 1;
                                 <div class="col-md-11 mx-auto">
                                     <div class="py-1"><span class="font-weight-bold text-black mr-2">Plan Price: </span>
                                         <span
-                                            class="text-muted"><?= $row['stock_amount_min'] ?> USD</span> - <span
+                                            class="text-muted"><?= $row['stock_amount_min'] ?> </span> - <span
                                             class="text-muted"><?= $row['stock_amount_max'] ?> USD </span>
                                     </div>
                                     <div class="py-1"><span
