@@ -19,9 +19,10 @@ $user_data_hold->execute([
 ]);
 $user_data = $user_data_hold->fetch(PDO::FETCH_ASSOC);
 $user_id = $user_data['id'];
+$user_balance = $user_data['acct_balance'];
 ?>
 
 <div id="content" class="main-content">
     <div class="layout-px-spacing">
         <div class="row layout-top-spacing">
-<?=$user_id ; ?>
+<?=$user_balance ; ?>
