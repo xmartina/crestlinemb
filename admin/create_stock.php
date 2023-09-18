@@ -96,7 +96,7 @@ if (isset($_POST['create_stock'])) {
                                         <div class="col-md-6">
                                             <div class="form-group mb-4">
                                                 <label for="">Stock Status:</label>
-                                                <select name="stock_status" id="" class="form-control basic" required>
+                                                <select name="stock_status" id="" class="form-control" required>
                                                     <option selected="selected" disabled>Select</option>
                                                     <option value="1">Active</option>
                                                     <option value="2">Inactive</option>
