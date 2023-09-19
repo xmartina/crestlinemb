@@ -59,7 +59,7 @@ $sn = 1;
 <!--                        --><?php //while ($stock_data = $get_stock_hold->fetch(PDO::FETCH_ASSOC)) { ?>
 <!--                        <div class="col-lg-2 col-md-6 col-sm-12"> <span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Duration</span> --><?php //= $stock_data['stock_duration']; ?><!--</div>-->
 <!--                        <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>-->
-                        <div class="col-lg-2 col-md-6 col-sm-12 font-weight-bold py-2"><span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Returns</span><?=$user_acct_currency ?> <?=$investment_data['plan_returns'] ?></div>
+                        <div class="col-lg-2 col-md-6 col-sm-12 py-2"><span class="d-lg-none d-xl-none d-md-block d-sm-block mr-2">Plan Returns</span><span class="font-weight-bold mr-1"><?=$user_acct_currency ?></span>  <?=$investment_data['plan_returns'] ?></div>
                         <div class="d-lg-none d-xl-none d-md-block d-sm-block my-3"></div>
                         <div class="col-lg-1 col-md-6 col-sm-12 py-2">
                             <?php $investmentStatus = $investment_data['investment_status'];
