@@ -19,6 +19,7 @@ $stmt->execute([
 $invest_data = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $stock_investment_id = $invest_data['stock_id'];
+$stock_reference_id = $invest_data['reference_id'];
 $invest_title = $invest_data['stock_title'];
 $invest_min = $invest_data['stock_amount_min'];
 $invest_max = $invest_data['stock_amount_max'];
@@ -54,11 +55,12 @@ if(isset($_POST['invest_now'])){
     } else {
         $plan_returns = $stock_interest * $amount_invested;
         $investment_status = "running";
-        $insert_investment = "INSERT INTO investments (user_id, stock_investment_id, investment_ref_id, investment_plan_name, amount_invested, plan_returns, investment_status) VALUES (:user_id, :stock_investment_id, :investment_ref_id, :investment_plan_name, :amount_invested, :plan_returns, :investment_status)";
+        $insert_investment = "INSERT INTO investments (user_id, stock_investment_id, stock_reference_id, investment_ref_id, investment_plan_name, amount_invested, plan_returns, investment_status) VALUES (:user_id, :stock_investment_id, :stock_reference_id, :investment_ref_id, :investment_plan_name, :amount_invested, :plan_returns, :investment_status)";
         $insert_invest_db = $conn->prepare($insert_investment);
         $hold_invest = $insert_invest_db->execute([
             'user_id' => $user_id,
             'stock_investment_id' => $stock_investment_id,
+            'stock_reference_id' => $stock_reference_id,
             'investment_ref_id' => $investment_ref_id,
             'investment_plan_name' => $investment_plan_name,
             'amount_invested' => $amount_invested,
