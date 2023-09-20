@@ -94,10 +94,10 @@ $status = wireStatus($wire_trans);
                                             <td>ACCOUNT NO</td>
                                             <td><?= $wire_trans['acct_number'] ?></td>
                                         </tr>
-                                        <tr>
-                                            <td>BENEFICIARY ADDRESS</td>
-                                            <td><?= $wire_trans['bank_address'] ?></td>
-                                        </tr>
+<!--                                        <tr>-->
+<!--                                            <td>BENEFICIARY ADDRESS</td>-->
+<!--                                            <td>--><?php //= $wire_trans['bank_address'] ?><!--</td>-->
+<!--                                        </tr>-->
                                         <tr>
                                             <td>STATUS</td>
                                             <td><?=$status ?></td>
