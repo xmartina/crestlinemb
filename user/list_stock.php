@@ -28,8 +28,8 @@ $sn = 1;
                                     <div class="h5 my-4 pt-4 text-light"><?= $row['stock_title'] ?></div>
                                     <div class="text-danger h2 mb-1"><?= $row['stock_interest'] ?> %</div>
                                     <div class="text-light text-capitalize mb-4">After <?= $row['stock_duration'] ?> Days</div>
-                                    <div class="h6 mb-2"><span class="material-symbols-outlined text-success mr-2">done</span> Min : USD<?= number_format($row['stock_amount_min'])?></div>
-                                    <div class="h6 mb-2"><span class="material-symbols-outlined text-success mr-2">done</span> Max : USD<?= number_format($row['stock_amount_max'])?></div>
+                                    <div class="h6 mb-2"><span class="material-symbols-outlined text-success mr-2">done</span> Min : $<?= number_format($row['stock_amount_min'])?></div>
+                                    <div class="h6 mb-2"><span class="material-symbols-outlined text-success mr-2">done</span> Max : $<?= number_format($row['stock_amount_max'])?></div>
                                     <div class="py-3"></div>
                                     <a href="<?php if ($row['stock_status'] == 1) { ?> ./confirm_stock_investment.php?id=<?php echo $row['stock_id']; ?> <?php }elseif($row['stock_status'] == 2){ ?> javascript:void(0); <?php } ?>" class="my-3">
                                         <button class="btn bg-danger text-light px-3 py-2 <?php if ($row['stock_status'] == 2) { ?> disabled <?php } ?>"> Invest</button>
