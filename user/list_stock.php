@@ -22,8 +22,9 @@ $sn = 1;
                             <?php
                             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
-                            <div class="col-lg-4 plan_main_bg rounded shadow-sm">
-                                <div class="text-center">
+                            <div class="col-lg-4">
+
+                                <div class="text-center plan_main_bg rounded shadow-sm">
                                     <div class="h6 my-3 text-light"><?= $row['stock_title'] ?></div>
                                     <div class="text-danger h3 mb-1"><?= $row['stock_interest'] ?> %</div>
                                     <div class="text-light text-capitalize mb-3">After <?= $row['stock_duration'] ?> Days</div>
