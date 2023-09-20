@@ -170,13 +170,7 @@ function domestic($result){
     }
 }
 
-$acct_id = userDetails('id');
 
-$wireStatus_sql ="SELECT * FROM wire_transfer WHERE acct_id =:acct_id ORDER BY wire_id DESC";
-$wire = $conn->prepare($wireStatus_sql);
-$wire->execute([
-    'acct_id'=>$acct_id
-]);
 function transStatus($result){
     if ($result['trans_status'] === '0') {
         return '<span class="badge outline-badge-secondary shadow-none col-md-12">In Progress</span>';
@@ -241,14 +235,3 @@ function cryptoName($value){
     return $row[$value];
 
 }
-
-
-
-
-
-
-
-
-
-
-
