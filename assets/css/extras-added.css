@@ -43,5 +43,9 @@
     cursor: pointer;
 }
 .border_red_1{
-    border-left:2px solid #FC0000;
+    border-left:3px solid #FC0000;
+}
+.hr-bg{
+    border: 2px solid #3b3f5c;
+    background-color: #3b3f5c;
 }

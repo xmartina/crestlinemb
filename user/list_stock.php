@@ -53,7 +53,10 @@ $sn = 1;
                 <div class="stock_container mt-3">
                     <div class="py-3 my-2 text-white border_red_1 bg-dark">
                         <div class="row">
-                            <div class="col-lg-12">  <h5 class="text-light">OUR INVESTMENT PACKAGES (RIO)</h5> </div>
+                            <div class="col-lg-12">
+                                <h5 class="ml-2 text-light">OUR INVESTMENT PACKAGES (RIO)</h5>
+                            </div>
+                            <hr class="hr-bg my-3">
                         </div>
                     </div>
                 </div>
