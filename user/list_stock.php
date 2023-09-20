@@ -53,6 +53,15 @@ $sn = 1;
         </div>
     </div>
 
+<div class="stock_container">
+    <div class="my-3 text-white">
+        <div class="row">
+            <div class="col-lg-1 border_red_1"></div>
+            <div class="col-lg-5">OUR INVESTMENT PACKAGES (RIO)</div>
+        </div>
+    </div>
+</div>
+
 <?php
 include_once("layouts/footer.php");
 ?>
