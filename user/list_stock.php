@@ -57,7 +57,15 @@ $sn = 1;
                         </div>
                         <hr class="hr-bg my-3">
                         <div class="row">
-                            <div class="col-lg-4"></div>
+                            <div class="col-lg-4">
+                                <div class="d-flex justify-content-center">
+                                    <div class="h6 my-3 text-light">Gas Plan Name</div>
+                                    <div class="text-danger h3 mb-1">Plan Returns %</div>
+                                    <div class="text-light text-capitalize mb-3">After :plan_duration: Days</div>
+                                    <div class="h6 mb-2">Min : acct_currency : Plan_min</div>
+                                    <div class="h6 mb-2">Max : acct_currency : Plan_max</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
