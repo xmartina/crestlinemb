@@ -57,7 +57,7 @@ $sn = 1;
                         </div>
                         <hr class="hr-bg my-3">
                         <div class="row">
-                            <div class="col-lg-4 plan_main_bg">
+                            <div class="col-lg-4 plan_main_bg rounded shadow-sm">
                                 <div class="text-center">
                                     <div class="h6 my-3 text-light">Gas Plan Name</div>
                                     <div class="text-danger h3 mb-1">Plan Returns %</div>
