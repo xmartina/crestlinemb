@@ -64,6 +64,7 @@ $sn = 1;
                                     <div class="text-light text-capitalize mb-3">After :plan_duration: Days</div>
                                     <div class="h6 mb-2">Min : acct_currency : Plan_min</div>
                                     <div class="h6 mb-2">Max : acct_currency : Plan_max</div>
+                                    <div class="btn bg-danger text-light px-3 py-2">Invest</div>
                                 </div>
                             </div>
                         </div>
