@@ -51,10 +51,10 @@ $sn = 1;
                 <?php } ?>
 
                 <div class="stock_container mt-3">
-                    <div class="my-3 text-white">
+                    <div class="my-3 text-white bg-dark">
                         <div class="row">
                             <div class="col-lg-1 border_red_1"></div>
-                            <div class="col-lg-5">OUR INVESTMENT PACKAGES (RIO)</div>
+                            <div class="col-lg-5">  <h4>OUR INVESTMENT PACKAGES (RIO)</h4> </div>
                         </div>
                     </div>
                 </div>
