@@ -3,6 +3,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 $pageName  = "Registration";
 require_once './layout/header.php';
+require_once 'vendor/autoload.php'; // Include PHPMailer autoloader
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 if(isset($_POST['regSubmit'])){
 
