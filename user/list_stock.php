@@ -12,13 +12,13 @@ $sn = 1;
     <div id="content" class="main-content">
         <div class="layout-px-spacing">
             <div class="layout-top-spacing">
-                <div class="stock_container mt-3">
-                    <div class="py-3 my-2 text-white bg-dark">
+                <div class="stock_container bg-dark mt-3">
+                    <div class="py-3 my-2 text-white">
                         <div class="border_red_1">
                             <h5 class="ml-2 text-light">OUR INVESTMENT PACKAGES (RIO)</h5>
                         </div>
                         <hr class="hr-bg my-3">
-                        <div class="row">
+                        <div class="row gx-3 gy-3">
                             <?php
                             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
