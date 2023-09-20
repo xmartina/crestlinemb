@@ -178,12 +178,7 @@ if(isset($_POST['regSubmit'])){
 
     <section class="wizard-section">
         <div class="row no-gutters">
-            <div class="col-lg-6 col-md-6 container-div">
-                <div class="wizard-content-left d-flex justify-content-center align-items-center">
-                    <h1>Create Your Bank Account</h1>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 container-div">
+            <div class="col-lg-12 col-md-12 container-div">
                 <div class="form-wizard">
                     <form action="" method="post" role="form" enctype="multipart/form-data">
                         <div class="form-wizard-header">
