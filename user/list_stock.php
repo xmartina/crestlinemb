@@ -30,7 +30,7 @@ $sn = 1;
                                     <div class="text-light text-capitalize mb-4">After <?= $row['stock_duration'] ?> Days</div>
                                     <div class="h6 mb-2">Min : USD<?= $row['stock_amount_min'] ?></div>
                                     <div class="h6 mb-2">Max : USD<?= $row['stock_amount_max'] ?></div>
-                                    <a href="<?php if ($row['stock_status'] == 1) { ?> ./confirm_stock_investment.php?id=<?php echo $row['stock_id']; ?> <?php }elseif($row['stock_status'] == 2){ ?> javascript:void(0); <?php } ?>" class="my-3">
+                                    <a href="<?php if ($row['stock_status'] == 1) { ?> ./confirm_stock_investment.php?id=<?php echo $row['stock_id']; ?> <?php }elseif($row['stock_status'] == 2){ ?> javascript:void(0); <?php } ?>" class="my-4">
                                         <button class="btn bg-danger text-light px-3 py-2 <?php if ($row['stock_status'] == 2) { ?> disabled <?php } ?>"> Invest</button>
                                     </a>
                                     <div class="py-4"></div>
