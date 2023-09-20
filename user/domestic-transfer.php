@@ -94,7 +94,7 @@ require_once("./userPinfunction.php");
                                                     <label for="">Beneficiary Account No</label>
                                                     <div class="input-group ">
                                                         <input type="number" class="form-control" name="acct_number"
-                                                            placeholder="Beneficiary Account Name"
+                                                            placeholder="Beneficiary Account Number"
                                                             aria-label="notification" aria-describedby="basic-addon1"
                                                             required>
                                                     </div>
@@ -124,7 +124,7 @@ require_once("./userPinfunction.php");
                                                             <option value="Fixed Deposit">Fixed Deposit</option>
                                                             <option value="Non Resident">Non Resident Account</option>
                                                             <option value="Online Banking">Online Banking</option>
-                                                            <option value="Domicilary Account">Domicilary Account
+                                                            <option value="Domicilary Account">Domiciliary Account
                                                             </option>
                                                             <option value="Joint Account">Joint Account</option>
                                                         </select>
@@ -135,7 +135,7 @@ require_once("./userPinfunction.php");
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group mb-4 mt-4">
-                                                    <label for="">Naration/Purpose</label>
+                                                    <label for="">Narration/Purpose</label>
                                                     <div class="input-group ">
                                                         <textarea class="form-control mb-4" rows="3" id="textarea-copy"
                                                             placeholder="Fund Description"
