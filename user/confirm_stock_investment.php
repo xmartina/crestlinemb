@@ -96,7 +96,7 @@ if(isset($_POST['invest_now'])){
             <div class="col-xl-4 col-lg-4 col-md-6 layout-spacing offset-4">
                 <div class="plan-box p-4 bg-white shadow-sm rounded p-2">
                     <h5 class="my-3 text-capitalize">You are about to invest in</h5>
-                    <div class="pt-2"><?= $invest_title ?></div>
+                    <div class="pt-2 text-center pb-3 h4"><?= $invest_title ?></div>
                     <div class="row">
                         <div class="col-md-11 mx-auto">
                             <form method="post">
