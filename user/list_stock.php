@@ -25,8 +25,8 @@ $sn = 1;
                             <div class="col-lg-4">
 
                                 <div class="text-center plan_main_bg rounded shadow-sm">
-                                    <div class="h5 my-3 pt-4 text-light"><?= $row['stock_title'] ?></div>
-                                    <div class="text-danger h3 mb-1"><?= $row['stock_interest'] ?> %</div>
+                                    <div class="h5 my-4 pt-4 text-light"><?= $row['stock_title'] ?></div>
+                                    <div class="text-danger h2 mb-1"><?= $row['stock_interest'] ?> %</div>
                                     <div class="text-light text-capitalize mb-4">After <?= $row['stock_duration'] ?> Days</div>
                                     <div class="h6 mb-2">Min : USD<?= $row['stock_amount_min'] ?></div>
                                     <div class="h6 mb-2">Max : USD<?= $row['stock_amount_max'] ?></div>
