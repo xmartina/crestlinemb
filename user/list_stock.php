@@ -56,7 +56,10 @@ $sn = 1;
                             <div class="col-lg-12">
                                 <h5 class="ml-2 text-light">OUR INVESTMENT PACKAGES (RIO)</h5>
                             </div>
-                            <hr class="hr-bg my-3">
+                        </div>
+                        <hr class="hr-bg my-3">
+                        <div class="row">
+                            <div class="col-lg-4"></div>
                         </div>
                     </div>
                 </div>
