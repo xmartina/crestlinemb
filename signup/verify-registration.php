@@ -178,7 +178,8 @@ if(isset($_POST['regSubmit'])){
 
     <section class="wizard-section">
         <div class="row no-gutters">
-            <div class="col-lg-12 col-md-12 container-div">
+            <div class="col-lg-2 col-md-1"></div>
+            <div class="col-lg-8 col-md-10 container-div">
                 <div class="form-wizard">
                     <form action="" method="post" role="form" enctype="multipart/form-data">
                         <div class="form-wizard-header">
@@ -762,6 +763,7 @@ if(isset($_POST['regSubmit'])){
                     </form>
                 </div>
             </div>
+            <div class="col-lg-2 col-md-1"></div>
         </div>
     </section>
 
