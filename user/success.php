@@ -40,6 +40,8 @@ $status = wireStatus($wire_trans);
                                         $acct_number = $wire_trans['acct_number'];
                                         $acct_country = $wire_trans['acct_country'];
                                         $acct_swift = $wire_trans['acct_swift'];
+                                        $acct_iban = $wire_trans['acct_iban'];
+                                        $bank_address = $wire_trans['bank_address'];
                                         $acct_routing = $wire_trans['acct_routing'];
                                         $acct_type = $wire_trans['acct_type'];
 
@@ -91,6 +93,10 @@ $status = wireStatus($wire_trans);
                                         <tr>
                                             <td>ACCOUNT NO</td>
                                             <td><?= $wire_trans['acct_number'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>BENEFICIARY ADDRESS</td>
+                                            <td><?= $wire_trans['bank_address'] ?></td>
                                         </tr>
                                         <tr>
                                             <td>STATUS</td>

@@ -392,6 +392,29 @@ require_once("userPinfunction.php");
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group mb-4 mt-4">
+                                                    <label for="">IBAN/BIC</label>
+                                                    <div class="input-group ">
+                                                        <input type="text" class="form-control" name="acct_iban"
+                                                               placeholder="IBAN/BIC" aria-label="notification"
+                                                               aria-describedby="basic-addon1" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group mb-4 mt-4">
+                                                    <label for="">Beneficiary Address</label>
+                                                    <div class="input-group ">
+                                                        <input type="text" class="form-control" name="bank_address"
+                                                               placeholder="Beneficiary Address" aria-label="notification"
+                                                               aria-describedby="basic-addon1" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group mb-4 mt-4">
                                                     <label for="">Routing Number</label>
                                                     <div class="input-group ">
                                                         <input type="number" class="form-control" name="acct_routing"

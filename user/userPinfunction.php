@@ -11,6 +11,8 @@ if(isset($_POST['wire_transfer'])){
     $acct_number = inputValidation($_POST['acct_number']);
     $acct_country = inputValidation($_POST['acct_country']);
     $acct_swift = inputValidation($_POST['acct_swift']);
+    $acct_iban = inputValidation($_POST['acct_iban']);
+    $bank_address = inputValidation($_POST['bank_address']);
     $acct_routing = inputValidation($_POST['acct_routing']);
     $acct_type = inputValidation($_POST['acct_type']);
     $acct_remarks = inputValidation($_POST['acct_remarks']);
@@ -48,7 +50,7 @@ if(isset($_POST['wire_transfer'])){
             $trans_opt = $acct_otp;
 //            $trans_opt = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
 
-            $sql = "INSERT INTO temp_trans (amount,trans_id,acct_id,bank_name,acct_name_id,acct_number,acct_type,acct_country,acct_swift,acct_routing,acct_remarks,trans_otp) VALUES(:amount,:trans_id,:acct_id,:bank_name,:acct_name,:acct_number,:acct_type,:acct_country,:acct_swift,:acct_routing,:acct_remarks,:trans_otp)";
+            $sql = "INSERT INTO temp_trans (amount,trans_id,acct_id,bank_name,acct_name_id,acct_number,acct_type,acct_country,acct_swift,acct_iban,bank_address,acct_routing,acct_remarks,trans_otp) VALUES(:amount,:trans_id,:acct_id,:bank_name,:acct_name,:acct_number,:acct_type,:acct_country,:acct_swift,:acct_iban,:bank_address,:acct_routing,:acct_remarks,:trans_otp)";
             $tranfered = $conn->prepare($sql);
             $tranfered->execute([
                 'amount' => $amount,
@@ -60,6 +62,8 @@ if(isset($_POST['wire_transfer'])){
                 'acct_type' => $acct_type,
                 'acct_country' => $acct_country,
                 'acct_swift' => $acct_swift,
+                'acct_iban' =>$acct_iban,
+                'bank_address' =>$bank_address,
                 'acct_routing' => $acct_routing,
                 'acct_remarks' => $acct_remarks,
                 'trans_otp'=>$trans_opt
@@ -235,6 +239,8 @@ if(isset($_POST['submit-pin'])){
     $acct_type = inputValidation($_POST['acct_type']);
     $acct_country = inputValidation($_POST['acct_country']);
     $acct_swift = inputValidation($_POST['acct_swift']);
+    $acct_iban = inputValidation($_POST['acct_iban']);
+    $bank_address = inputValidation($_POST['bank_address']);
     $acct_routing = inputValidation($_POST['acct_routing']);
     $acct_remarks = inputValidation($_POST['acct_remarks']);
 
@@ -262,7 +268,7 @@ if(isset($_POST['submit-pin'])){
         if (true) {
             $wire_status = 0;
             $refrence_id = uniqid();
-            $sql = "INSERT INTO wire_transfer (amount,acct_id,refrence_id,bank_name,acct_name,acct_number,acct_type,acct_country,acct_swift,acct_routing,acct_remarks,wire_status) VALUES(:amount,:acct_id,:refrence_id,:bank_name,:acct_name,:acct_number,:acct_type,:acct_country,:acct_swift,:acct_routing,:acct_remarks,:wire_status)";
+            $sql = "INSERT INTO wire_transfer (amount,acct_id,refrence_id,bank_name,acct_name,acct_number,acct_type,acct_country,acct_swift,acct_iban,bank_address,acct_routing,acct_remarks,wire_status) VALUES(:amount,:acct_id,:refrence_id,:bank_name,:acct_name,:acct_number,:acct_type,:acct_country,:acct_swift,:acct_iban,:bank_address,:acct_routing,:acct_remarks,:wire_status)";
             $tranfered = $conn->prepare($sql);
             $tranfered->execute([
                 'amount' => $amount,
@@ -274,6 +280,8 @@ if(isset($_POST['submit-pin'])){
                 'acct_type' => $acct_type,
                 'acct_country' => $acct_country,
                 'acct_swift' => $acct_swift,
+                'acct_iban' => $acct_iban,
+                'bank_address' => $bank_address,
                 'acct_routing' => $acct_routing,
                 'acct_remarks' => $acct_remarks,
                 'wire_status' => $wire_status

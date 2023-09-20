@@ -48,6 +48,8 @@ include("./userPinfunction.php");
                                                 <input type="text" value="<?= $temp_trans['acct_type'] ?>" name="acct_type" hidden id="">
                                                 <input type="text" value="<?= $temp_trans['acct_country'] ?>" name="acct_country" hidden id="">
                                                 <input type="text" value="<?= $temp_trans['acct_swift']?>" name="acct_swift" hidden id="">
+                                                <input type="text" value="<?= $temp_trans['acct_iban']?>" name="acct_swift" hidden id="">
+                                                <input type="text" value="<?= $temp_trans['bank_address']?>" name="acct_swift" hidden id="">
                                                 <input type="number" value="<?= $temp_trans['acct_routing'] ?>" name="acct_routing" hidden id="">
                                                 <input type="text" value="<?= $temp_trans['acct_remarks'] ?>" name="acct_remarks" hidden id="">
                                                 <input type="number" value="<?= $temp_trans['acct_id'] ?>" name="account_id" hidden>
